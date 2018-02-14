@@ -21,8 +21,8 @@ while read -d \< element content ; do {
         then
             [[ $i -eq "0" ]] && { echo Departure ; } || { echo Arrival ; }
             echo "platform $content"
+            i=$i+1
+            [[ i -eq 2 ]] && i=0
         fi
         #echo $element : $content
-        i=$i+1
-        [[ i -eq 2 ]] && i=0
 } done < irail.xml
